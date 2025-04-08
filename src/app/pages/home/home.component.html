@@ -1,1 +1,9 @@
-<p>home works!</p>
+@if (statistical(); as statistical) {
+<div>
+    <h1>Estatísticas</h1>
+    <p>Total de pessoas desaparecidas: {{ statistical.quantPessoasDesaparecidas }}</p>
+    <p>Total de pessoas encontradas: {{ statistical.quantPessoasEncontradas }}</p>
+    </div>
+} @else {
+<p>Carregando dados...</p>
+}
