@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { HttpPersonService } from '../../shared/services/http-person/http-person.service';
-import { IStatistical } from '@/shared/interfaces/person.interface';
-import { SpinnerComponent } from '@/core/layout/components/loading/spinner/spinner.component';
+import { SpinnerComponent } from '../../core/layout/components/loading/spinner/spinner.component';
+import { IStatistical } from '../../shared/interfaces/person.interface';
 
 @Component({
   selector: 'app-home',

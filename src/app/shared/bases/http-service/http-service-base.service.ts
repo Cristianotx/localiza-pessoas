@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { IHttpService } from './http-service-interface';
-import { environment } from '@/environments/environment';
 import { inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { buildQueryParams } from '@/shared/helpers/query-params.herper';
+import { environment } from '../../../../environments/environment.development';
+import { buildQueryParams } from '../../helpers/query-params.helper';
 
 type ApiVersionType = 'v1';
 

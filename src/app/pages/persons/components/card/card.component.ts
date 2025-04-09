@@ -1,7 +1,7 @@
-import { IPerson } from '@/shared/interfaces/person.interface';
 import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { IPerson } from '../../../../shared/interfaces/person.interface';
 
 @Component({
   selector: 'app-card',

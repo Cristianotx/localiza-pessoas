@@ -1,8 +1,8 @@
-import { IFilter } from '@/pages/persons/components/filter/filter.component';
-import { HttpServiceBase } from '@/shared/bases/http-service/http-service-base.service';
-import { IPerson, IResponse, IStatistical } from '@/shared/interfaces/person.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { HttpServiceBase } from '../../bases/http-service/http-service-base.service';
+import { IPerson, IResponse, IStatistical } from '../../interfaces/person.interface';
+import { IFilter } from '../../../pages/persons/components/filter/filter.component';
 
 @Injectable({
   providedIn: 'root',

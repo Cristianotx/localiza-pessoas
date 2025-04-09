@@ -1,12 +1,12 @@
-import { IResponse } from '@/shared/interfaces/person.interface';
-import { HttpPersonService } from '@/shared/services/http-person/http-person.service';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { PaginationComponent } from '../components/pagination/pagination.component';
 import { FormControl, FormGroup } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FilterComponent, IFilter } from '../components/filter/filter.component';
 import { CardComponent } from '../components/card/card.component';
-import { SkeletonComponent } from '@/core/layout/components/loading/skeleton/skeleton.component';
+import { IResponse } from '../../../shared/interfaces/person.interface';
+import { HttpPersonService } from '../../../shared/services/http-person/http-person.service';
+import { SkeletonComponent } from '../../../core/layout/components/loading/skeleton/skeleton.component';
 
 @Component({
   selector: 'app-persons-list',

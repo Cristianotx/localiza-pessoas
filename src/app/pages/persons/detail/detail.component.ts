@@ -1,10 +1,10 @@
-import { SpinnerComponent } from '@/core/layout/components/loading/spinner/spinner.component';
-import { IPerson } from '@/shared/interfaces/person.interface';
-import { HttpPersonService } from '@/shared/services/http-person/http-person.service';
 import { DatePipe, NgClass } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { map } from 'rxjs';
+import { SpinnerComponent } from '../../../core/layout/components/loading/spinner/spinner.component';
+import { HttpPersonService } from '../../../shared/services/http-person/http-person.service';
+import { IPerson } from '../../../shared/interfaces/person.interface';
 
 @Component({
   selector: 'app-persns-detail',

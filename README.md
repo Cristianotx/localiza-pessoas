@@ -38,6 +38,9 @@ cd localiza-pessoas
 docker-compose up --build
 ```
 
+### 3. Pronto, agora é só acessar no browser
+[localhost:4200](http://localhost:4200)
+
 ## 🅰️ Rodando via Angular CLI
 
 ### 📦 Requisitos
@@ -59,6 +62,9 @@ npm i
 ```bash
 npm start
 ```
+### 4. Pronto, agora é só acessar no browser
+[localhost:4200](http://localhost:4200)
+
 ## 🧱 Estrutura do Projeto
 ```bash
 .
@@ -88,3 +94,4 @@ npm start
 * Testes automatizado
 * Utilização de biblioteca para gerenciamento de estado
 * Renderização SSR
+* Cobertura de testes
