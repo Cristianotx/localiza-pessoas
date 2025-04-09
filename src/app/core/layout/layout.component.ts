@@ -7,8 +7,6 @@ import { ContentComponent } from './components/content/content.component';
   selector: 'app-layout',
   imports: [HeaderComponent, MenuComponent, ContentComponent],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  styleUrl: './layout.component.scss',
 })
-export class LayoutComponent {
-
-}
+export class LayoutComponent {}

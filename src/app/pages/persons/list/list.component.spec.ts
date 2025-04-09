@@ -8,9 +8,8 @@ describe('MissingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PersonsListComponent]
-    })
-    .compileComponents();
+      imports: [PersonsListComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PersonsListComponent);
     component = fixture.componentInstance;

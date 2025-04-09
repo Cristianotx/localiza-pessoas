@@ -7,7 +7,7 @@ import { SpinnerComponent } from '@/core/layout/components/loading/spinner/spinn
   selector: 'app-home',
   imports: [SpinnerComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
   statistical = signal<IStatistical | null>(null);
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   private getDados(): void {
     this.httpPersonService.getStatistical().subscribe({
       next: (res) => this.statistical.set(res),
-      error: (err) => console.error('Erro ao buscar estatísticas:', err)
+      error: (err) => console.error('Erro ao buscar estatísticas:', err),
     });
   }
 }

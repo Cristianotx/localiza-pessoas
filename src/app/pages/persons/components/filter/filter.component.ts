@@ -14,7 +14,7 @@ export interface IFilter {
   selector: 'app-filter',
   imports: [ReactiveFormsModule, FormsModule],
   templateUrl: './filter.component.html',
-  styleUrl: './filter.component.scss'
+  styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
   @Input() form!: FormGroup;

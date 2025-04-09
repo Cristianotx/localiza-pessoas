@@ -10,7 +10,7 @@ import { map } from 'rxjs';
   selector: 'app-persns-detail',
   imports: [DatePipe, NgClass, RouterModule, SpinnerComponent],
   templateUrl: './detail.component.html',
-  styleUrl: './detail.component.scss'
+  styleUrl: './detail.component.scss',
 })
 export class PersonsDetailComponent {
   loading = signal(true);
@@ -28,10 +28,10 @@ export class PersonsDetailComponent {
       if (id) {
         this.httpPersonService.getById(id).subscribe({
           next: (res) => {
-            this.person.set(res)
+            this.person.set(res);
             this.loading.set(false);
           },
-          error: (err) => console.error('Erro ao buscar desaparecidos:', err)
+          error: (err) => console.error('Erro ao buscar desaparecidos:', err),
         });
       }
     });

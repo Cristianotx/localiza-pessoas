@@ -7,9 +7,8 @@ import { RouterModule } from '@angular/router';
   selector: 'app-card',
   imports: [RouterModule, DatePipe],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrl: './card.component.scss',
 })
 export class CardComponent {
   @Input() person!: IPerson;
-
 }

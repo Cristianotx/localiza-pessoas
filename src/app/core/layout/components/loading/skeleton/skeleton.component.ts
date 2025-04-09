@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-loading-skeleton',
   imports: [],
   templateUrl: './skeleton.component.html',
-  styleUrl: './skeleton.component.scss'
+  styleUrl: './skeleton.component.scss',
 })
-export class SkeletonComponent {
-
-}
+export class SkeletonComponent {}

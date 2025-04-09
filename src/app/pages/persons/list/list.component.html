@@ -1,34 +1,33 @@
 <h2 class="text-2xl font-bold mb-4 text-gray-800">persons Desaparecidas</h2>
 
-
 @if (loading()) {
-    <app-loading-skeleton></app-loading-skeleton>
+  <app-loading-skeleton></app-loading-skeleton>
 } @else {
-
-
-
-<div class="p-6">
+  <div class="p-6">
     <app-filter [form]="filterForm" (filterChange)="filter()"></app-filter>
 
     @if (missings(); as missings) {
-    @if (missings.content.length > 0) {
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        @for (person of missings.content; track person.id) {
+      @if (missings.content.length > 0) {
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          @for (person of missings.content; track person.id) {
             <app-card [person]="person"></app-card>
+          }
+        </div>
+
+        @if (filterForm.get('pagina')) {
+          <app-pagination
+            [currentPage]="filterForm.get('pagina')!.value!"
+            [totalPages]="totalPages"
+            (pageChange)="onPageChange($event)"
+          >
+          </app-pagination>
         }
-    </div>
-
-    @if (filterForm.get('pagina')) {
-    <app-pagination [currentPage]="filterForm.get('pagina')!.value!" [totalPages]="totalPages" (pageChange)="onPageChange($event)">
-    </app-pagination>
+      } @else {
+        <div class="bg-white shadow p-4 rounded-lg mb-6">
+          <h2 class="text-lg font-bold text-gray-800 mb-4">🔍 Nenhum resultado encontrado</h2>
+          <p class="text-gray-600">Tente ajustar os filtros ou verifique a ortografia.</p>
+        </div>
+      }
     }
-    }@else {
-    <div class="bg-white shadow p-4 rounded-lg mb-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">🔍 Nenhum resultado encontrado</h2>
-        <p class="text-gray-600">Tente ajustar os filtros ou verifique a ortografia.</p>
-    </div>
-    }
-    }
-
-</div>
+  </div>
 }

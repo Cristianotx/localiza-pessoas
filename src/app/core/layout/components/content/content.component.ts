@@ -4,8 +4,6 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-content',
   imports: [RouterOutlet],
   templateUrl: './content.component.html',
-  styleUrl: './content.component.scss'
+  styleUrl: './content.component.scss',
 })
-export class ContentComponent {
-
-}
+export class ContentComponent {}

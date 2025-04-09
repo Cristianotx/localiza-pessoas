@@ -1,18 +1,17 @@
-import { HttpClient } from "@angular/common/http";
-import { IHttpService } from "./http-service-interface";
-import { environment } from "@/environments/environment";
-import { inject } from "@angular/core";
-import { Observable } from "rxjs";
-import { buildQueryParams } from "@/shared/helpers/query-params.herper";
+import { HttpClient } from '@angular/common/http';
+import { IHttpService } from './http-service-interface';
+import { environment } from '@/environments/environment';
+import { inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { buildQueryParams } from '@/shared/helpers/query-params.herper';
 
 type ApiVersionType = 'v1';
 
 const httpOptions = {
   headers: {
     'Content-Type': 'application/json',
-  }
-}
-
+  },
+};
 
 export class HttpServiceBase<T> implements IHttpService<T> {
   private httpClient: HttpClient;
@@ -26,13 +25,13 @@ export class HttpServiceBase<T> implements IHttpService<T> {
     return this.httpClient.get<T>(this.getUrlWithParams(url, params), httpOptions);
   }
   public post(url: string, body?: T): Observable<T> {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
   public put(url: string, body?: T): Observable<T> {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
   public delete(url: string, params?: any): Observable<T> {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
 
   private getUrlWithParams(url?: string, params?: Object): string {

@@ -1,21 +1,24 @@
 <p>Bem-vindo ao sistema de monitoramento.</p>
 @if (statistical(); as statistical) {
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
     <!-- Card: Pessoas Desaparecidas -->
     <div class="bg-red-100 border-l-4 border-red-500 p-6 rounded-xl shadow">
-        <h2 class="text-xl font-bold text-red-700">Desaparecidos</h2>
-        <p class="text-gray-700 text-3xl mt-2 font-semibold">{{ statistical.quantPessoasDesaparecidas }}</p>
-        <p class="text-sm text-red-600 mt-1">Pessoas ainda não localizadas</p>
+      <h2 class="text-xl font-bold text-red-700">Desaparecidos</h2>
+      <p class="text-gray-700 text-3xl mt-2 font-semibold">
+        {{ statistical.quantPessoasDesaparecidas }}
+      </p>
+      <p class="text-sm text-red-600 mt-1">Pessoas ainda não localizadas</p>
     </div>
 
     <!-- Card: Pessoas Encontradas -->
     <div class="bg-green-100 border-l-4 border-green-500 p-6 rounded-xl shadow">
-        <h2 class="text-xl font-bold text-green-700">Encontrados</h2>
-        <p class="text-gray-700 text-3xl mt-2 font-semibold">{{ statistical.quantPessoasEncontradas }}</p>
-        <p class="text-sm text-green-600 mt-1">Pessoas localizadas com sucesso</p>
+      <h2 class="text-xl font-bold text-green-700">Encontrados</h2>
+      <p class="text-gray-700 text-3xl mt-2 font-semibold">
+        {{ statistical.quantPessoasEncontradas }}
+      </p>
+      <p class="text-sm text-green-600 mt-1">Pessoas localizadas com sucesso</p>
     </div>
-</div>
-
+  </div>
 } @else {
-<app-loading-spinner></app-loading-spinner>
+  <app-loading-spinner></app-loading-spinner>
 }

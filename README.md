@@ -1,59 +1,90 @@
-# LocalizaPessoas
+# 🧭 Sistema de Monitoramento de Pessoas
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Este projeto é uma aplicação web desenvolvida com **Angular 19** e **Tailwind CSS**, com a responsabilidade de gerenciar pessoas desaparecidas e encontradas.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tecnologias Utilizadas
 
-```bash
-ng serve
-```
+- [Angular 19](https://angular.io/)
+- [Tailwind CSS 3.4](https://tailwindcss.com/)
+- [Node.js + Express](https://expressjs.com/)
+- [RxJS](https://rxjs.dev/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [ESlint](https://jestjs.io/pt-BR/) +  [Prettier](https://jestjs.io/pt-BR/)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## ⚙️ Baixando o Projeto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 1. Clone o repositório
 
 ```bash
-ng generate --help
+git clone https://github.com/Cristianotx/localiza-pessoas.git
 ```
 
-## Building
+## 🐳 Rodando via Docker (recomendado)
 
-To build the project run:
+### 📦 Requisitos
 
+- [Docker](https://docs.docker.com/desktop/setup/install/)
+
+### 1. Acesse o projeto
 ```bash
-ng build
+cd localiza-pessoas
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### 2. Rode o seguinte comando
 ```bash
-ng test
+docker-compose up --build
 ```
 
-## Running end-to-end tests
+## 🅰️ Rodando via Angular CLI
 
-For end-to-end (e2e) testing, run:
+### 📦 Requisitos
 
+- [Node.js](https://nodejs.org/) v18 ou superior
+- [Angular CLI](https://angular.io/cli) `npm install -g @angular/cli`
+- Gerenciador de pacotes (npm ou yarn)
+
+### 1. Acesse o projeto
 ```bash
-ng e2e
+cd localiza-pessoas
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2. Instale os pacotes
+```bash
+npm i
+```
+### 3. Rodando o projeto
+```bash
+npm start
+```
+## 🧱 Estrutura do Projeto
+```bash
+.
+├── src/
+│   ├── app/
+│   │   ├── core/   
+│   │   │   └── layout/   
+│   │   ├── pages/ 
+│   │   │   ├──  home/
+│   │   │   └──  persons/
+│   │   └── shared/  
+│   │       ├──  bases/
+│   │       ├──  helpers/
+│   │       ├──  interfaces/
+│   │       └──  services/
+│   └── tailwind.config.js
+└── README.md
+```
 
-## Additional Resources
+### 🖼️ Funcionalidades
+* Painel estatístico
+* Lista de pessoas desaparecidas com filtros e paginação
+* Página de detalhes com status (viva/morta, encontrada/desaparecida)
+* Layout 100% Tailwind
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 🔄 O que pode ser melhorado?
+* Testes automatizado
+* Utilização de biblioteca para gerenciamento de estado
+* Renderização SSR

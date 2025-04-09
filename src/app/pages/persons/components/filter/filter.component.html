@@ -1,51 +1,66 @@
 <form [formGroup]="form">
-    <div class="bg-white shadow p-4 rounded-lg mb-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">🔎 Filtros</h2>
+  <div class="bg-white shadow p-4 rounded-lg mb-6">
+    <h2 class="text-lg font-bold text-gray-800 mb-4">🔎 Filtros</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Nome</label>
-                <input type="text" formControlName="nome"
-                    class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm">
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nome</label>
+        <input
+          type="text"
+          formControlName="nome"
+          class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm"
+        />
+      </div>
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Situação</label>
-                <select formControlName="status"
-                    class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm">
-                    <option value="">Todos</option>
-                    <option value="LOCALIZADO">Localizado</option>
-                    <option value="DESAPARECIDO">Desaparecido</option>
-                </select>
-            </div>
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Sexo</label>
-                <select formControlName="sexo"
-                    class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm">
-                    <option value="">Todos</option>
-                    <option value="MASCULINO">Masculino</option>
-                    <option value="FEMININO">Feminino</option>
-                </select>
-            </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Situação</label>
+        <select
+          formControlName="status"
+          class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm"
+        >
+          <option value="">Todos</option>
+          <option value="LOCALIZADO">Localizado</option>
+          <option value="DESAPARECIDO">Desaparecido</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Sexo</label>
+        <select
+          formControlName="sexo"
+          class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm"
+        >
+          <option value="">Todos</option>
+          <option value="MASCULINO">Masculino</option>
+          <option value="FEMININO">Feminino</option>
+        </select>
+      </div>
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Idade mínima</label>
-                <input type="number" formControlName="faixaIdadeInicial"
-                    class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm">
-            </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Idade mínima</label>
+        <input
+          type="number"
+          formControlName="faixaIdadeInicial"
+          class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm"
+        />
+      </div>
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Idade máxima</label>
-                <input type="number" formControlName="faixaIdadeFinal"
-                    class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm">
-            </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Idade máxima</label>
+        <input
+          type="number"
+          formControlName="faixaIdadeFinal"
+          class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm sm:text-sm"
+        />
+      </div>
 
-            <div>
-                <button (click)="filter()"
-                    class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                    Aplicar Filtros
-                </button>
-            </div>
-        </div>
+      <div>
+        <button
+          (click)="filter()"
+          class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+        >
+          Aplicar Filtros
+        </button>
+      </div>
     </div>
+  </div>
 </form>

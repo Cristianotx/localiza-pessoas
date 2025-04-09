@@ -5,12 +5,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpPersonService extends HttpServiceBase<any> {
-
   constructor() {
-    super('pessoas')
+    super('pessoas');
   }
 
   public getStatistical(): Observable<IStatistical> {
@@ -24,5 +23,4 @@ export class HttpPersonService extends HttpServiceBase<any> {
   public getById(id: string): Observable<IPerson> {
     return this.get(id);
   }
-
 }

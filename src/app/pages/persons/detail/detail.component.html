@@ -1,74 +1,79 @@
-<button [routerLink]="['/persons']"
-    class="mb-4 inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 font-medium">
-    ← Voltar para a listagem
+<button
+  [routerLink]="['/persons']"
+  class="mb-4 inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 font-medium"
+>
+  ← Voltar para a listagem
 </button>
 
 @if (loading()) {
-<app-loading-spinner></app-loading-spinner>
+  <app-loading-spinner></app-loading-spinner>
 } @else {
-@if (person(); as person) {
-<div class="max-w-6xl mx-auto p-6 bg-white rounded-xl shadow-md">
-    <div class="flex flex-col md:flex-row items-center gap-6 mb-6">
-        <img [src]="person.urlFoto || 'https://via.placeholder.com/150?text=Sem+Foto'" alt="Foto de {{ person.nome }}"
-            class="w-40 h-40 object-cover rounded-full border shadow-md" />
+  @if (person(); as person) {
+    <div class="max-w-6xl mx-auto p-6 bg-white rounded-xl shadow-md">
+      <div class="flex flex-col md:flex-row items-center gap-6 mb-6">
+        <img
+          [src]="person.urlFoto || 'https://via.placeholder.com/150?text=Sem+Foto'"
+          alt="Foto de {{ person.nome }}"
+          class="w-40 h-40 object-cover rounded-full border shadow-md"
+        />
         <div class="flex-1">
-            <h2 class="text-2xl font-bold text-gray-800">{{ person.nome }}</h2>
-            <p class="text-gray-600 text-sm">Idade: {{ person.idade }}</p>
-            <p class="text-gray-600 text-sm">Sexo: {{ person.sexo }}</p>
-            <div class="mt-3">
-                <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full" [ngClass]="{
-              'bg-yellow-100 text-yellow-800': !person.ultimaOcorrencia.dataLocalizacao,
-              'bg-green-100 text-green-800': person.ultimaOcorrencia.dataLocalizacao
-            }">
-                    {{
-                    person.ultimaOcorrencia.dataLocalizacao
-                    ? 'Encontrada'
-                    : 'Desaparecida'
-                    }}
-                </span>
+          <h2 class="text-2xl font-bold text-gray-800">{{ person.nome }}</h2>
+          <p class="text-gray-600 text-sm">Idade: {{ person.idade }}</p>
+          <p class="text-gray-600 text-sm">Sexo: {{ person.sexo }}</p>
+          <div class="mt-3">
+            <span
+              class="inline-block text-xs font-semibold px-3 py-1 rounded-full"
+              [ngClass]="{
+                'bg-yellow-100 text-yellow-800': !person.ultimaOcorrencia.dataLocalizacao,
+                'bg-green-100 text-green-800': person.ultimaOcorrencia.dataLocalizacao,
+              }"
+            >
+              {{ person.ultimaOcorrencia.dataLocalizacao ? 'Encontrada' : 'Desaparecida' }}
+            </span>
 
-                <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full ml-2" [ngClass]="{
-              'bg-green-100 text-green-800': person.vivo,
-              'bg-red-100 text-red-800': !person.vivo
-            }">
-                    {{ person.vivo ? 'Viva' : 'Morta' }}
-                </span>
-            </div>
+            <span
+              class="inline-block text-xs font-semibold px-3 py-1 rounded-full ml-2"
+              [ngClass]="{
+                'bg-green-100 text-green-800': person.vivo,
+                'bg-red-100 text-red-800': !person.vivo,
+              }"
+            >
+              {{ person.vivo ? 'Viva' : 'Morta' }}
+            </span>
+          </div>
         </div>
-    </div>
+      </div>
 
-    @if (person.ultimaOcorrencia) {
-    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <h3 class="text-lg font-semibold text-gray-800 mb-3">Última Ocorrência</h3>
+      @if (person.ultimaOcorrencia) {
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Última Ocorrência</h3>
 
-        <div class="text-sm text-gray-700 space-y-2">
+          <div class="text-sm text-gray-700 space-y-2">
             <p>
-                <strong>Data do desaparecimento:</strong>
-                {{ person.ultimaOcorrencia.dtDesaparecimento | date:'dd/MM/yyyy' }}
+              <strong>Data do desaparecimento:</strong>
+              {{ person.ultimaOcorrencia.dtDesaparecimento | date: 'dd/MM/yyyy' }}
             </p>
 
             @if (person.ultimaOcorrencia.dataLocalizacao) {
-            <p>
+              <p>
                 <strong>Data da localização:</strong>
-                {{ person.ultimaOcorrencia.dataLocalizacao | date:'dd/MM/yyyy' }}
-            </p>
+                {{ person.ultimaOcorrencia.dataLocalizacao | date: 'dd/MM/yyyy' }}
+              </p>
             }
 
             <p>
-                <strong>Local do desaparecimento:</strong>
-                {{ person.ultimaOcorrencia.localDesaparecimentoConcat }}
+              <strong>Local do desaparecimento:</strong>
+              {{ person.ultimaOcorrencia.localDesaparecimentoConcat }}
             </p>
             @if (person.ultimaOcorrencia.dataLocalizacao) {
-            <p>
+              <p>
                 <strong>Encontrada viva:</strong>
                 {{ person.ultimaOcorrencia.encontradoVivo ? 'Sim' : 'Não' }}
-            </p>
+              </p>
             }
+          </div>
         </div>
+      }
     </div>
-    }
-
-
-</div>
-}
+  }
 }
