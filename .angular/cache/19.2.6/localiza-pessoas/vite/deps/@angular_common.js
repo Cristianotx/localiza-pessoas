@@ -1,4 +1,3 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   APP_BASE_HREF,
   AsyncPipe,
@@ -88,7 +87,7 @@ import {
   provideNetlifyLoader,
   registerLocaleData,
   setRootDomAdapter
-} from "./chunk-ISLDYWGG.js";
+} from "./chunk-HYLGRWHL.js";
 import {
   DOCUMENT,
   PLATFORM_BROWSER_ID,
@@ -97,11 +96,10 @@ import {
   isPlatformBrowser,
   isPlatformServer,
   parseCookieValue
-} from "./chunk-AWFF3HDW.js";
+} from "./chunk-U33TO32B.js";
 import {
   IMAGE_CONFIG
-} from "./chunk-AYIISLBR.js";
-import "./chunk-YHCV7DAQ.js";
+} from "./chunk-BMMIBYAN.js";
 export {
   APP_BASE_HREF,
   AsyncPipe,

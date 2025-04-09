@@ -1,13 +1,21 @@
 <aside class="h-full w-64 bg-gray-800 text-white p-4 flex-shrink-0 flex flex-col">
-    <h2 class="text-2xl font-bold mb-6">Menu</h2>
-    <nav class="space-y-3">
-      <a routerLink="/dashboard" routerLinkActive="bg-gray-700"
-         class="block p-2 rounded hover:bg-gray-700 transition">
-        📊 Dashboard
-      </a>
-      <a routerLink="/estatisticas" routerLinkActive="bg-gray-700"
-         class="block p-2 rounded hover:bg-gray-700 transition">
-        📈 Estatísticas
-      </a>
-    </nav>
-  </aside>
+  <h2 class="text-2xl font-bold mb-6">Menu</h2>
+  <nav class="space-y-3">
+    <a routerLink="/" routerLinkActive="bg-gray-700" class="block p-2 rounded hover:bg-gray-700 transition">
+      Home
+    </a>
+    <span
+      class="w-full text-left p-2 rounded hover:bg-gray-700 transition flex items-center justify-between">
+      👥 Pessoas
+    </span>
+
+    <!-- Submenu -->
+    <div class="ml-4 space-y-1">
+      <a routerLink="/persons/missing" routerLinkActive="bg-gray-700"
+        class="block p-2 rounded hover:bg-gray-700 transition">🔍 Desaparecidas</a>
+      <a routerLink="/persons/localized" routerLinkActive="bg-gray-700"
+        class="block p-2 rounded hover:bg-gray-700 transition">✅ Encontradas</a>
+    </div>
+
+  </nav>
+</aside>

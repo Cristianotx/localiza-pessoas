@@ -1,4 +1,10 @@
 import {
+  DOCUMENT,
+  XhrFactory,
+  isPlatformServer,
+  parseCookieValue
+} from "./chunk-U33TO32B.js";
+import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
   Console,
@@ -43,33 +49,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-XEJBNXCQ.js";
-
-// node_modules/@angular/common/fesm2022/xhr-BdgfMvBr.mjs
-function parseCookieValue(cookieStr, name) {
-  name = encodeURIComponent(name);
-  for (const cookie of cookieStr.split(";")) {
-    const eqIndex = cookie.indexOf("=");
-    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ""] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
-    if (cookieName.trim() === name) {
-      return decodeURIComponent(cookieValue);
-    }
-  }
-  return null;
-}
-var PLATFORM_BROWSER_ID = "browser";
-var PLATFORM_SERVER_ID = "server";
-function isPlatformBrowser(platformId) {
-  return platformId === PLATFORM_BROWSER_ID;
-}
-function isPlatformServer(platformId) {
-  return platformId === PLATFORM_SERVER_ID;
-}
-var XhrFactory = class {
-};
-
-// node_modules/@angular/common/fesm2022/dom_tokens-CNpAxedO.mjs
-var DOCUMENT = new InjectionToken(ngDevMode ? "DocumentToken" : "");
+} from "./chunk-BMMIBYAN.js";
 
 // node_modules/@angular/common/fesm2022/module-Bnny_XF2.mjs
 var HttpHandler = class {
@@ -2517,12 +2497,6 @@ function appendMissingHeadersDetection(url, headers, headersToInclude) {
 }
 
 export {
-  parseCookieValue,
-  PLATFORM_BROWSER_ID,
-  isPlatformBrowser,
-  isPlatformServer,
-  XhrFactory,
-  DOCUMENT,
   HttpHandler,
   HttpBackend,
   HttpHeaders,
@@ -2565,20 +2539,6 @@ export {
 };
 /*! Bundled license information:
 
-@angular/common/fesm2022/xhr-BdgfMvBr.mjs:
-  (**
-   * @license Angular v19.2.5
-   * (c) 2010-2025 Google LLC. https://angular.io/
-   * License: MIT
-   *)
-
-@angular/common/fesm2022/dom_tokens-CNpAxedO.mjs:
-  (**
-   * @license Angular v19.2.5
-   * (c) 2010-2025 Google LLC. https://angular.io/
-   * License: MIT
-   *)
-
 @angular/common/fesm2022/module-Bnny_XF2.mjs:
   (**
    * @license Angular v19.2.5
@@ -2593,4 +2553,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-SJIJYYYA.js.map
+//# sourceMappingURL=chunk-ODT7ZDVI.js.map
