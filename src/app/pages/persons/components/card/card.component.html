@@ -1,0 +1,33 @@
+<div class="relative bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center relative">
+    @if (person.ultimaOcorrencia.dataLocalizacao) {
+    <div class="absolute top-0 left-0 bg-green-600 text-white text-xs px-2 py-1 rounded-br-md">
+        LOCALIZADA
+    </div>
+    } @else {
+    <div class="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1 rounded-br-md">
+        DESAPARECIDA
+    </div>
+
+    }
+    <img [src]="person.urlFoto" alt="Foto de {{ person.nome }}"
+        class="w-32 h-32 object-cover rounded-full mb-4 border border-gray-300 shadow-sm" />
+
+    <h3 class="text-lg font-semibold text-gray-900">{{ person.nome }}</h3>
+    <p class="text-sm text-gray-600 mt-1">Idade: {{ person.idade }}</p>
+    <p class="text-sm text-gray-600">Sexo: {{ person.sexo }}</p>
+    @if (person.ultimaOcorrencia.dataLocalizacao) {
+    <p class="text-sm text-gray-600"> Localizado em: {{ person.ultimaOcorrencia.dtDesaparecimento |
+        date:'dd/MM/yyyy' }}
+    </p>
+    }@else {
+    <p class="text-sm text-gray-600"> Desapareceu em: {{ person.ultimaOcorrencia.dtDesaparecimento |
+        date:'dd/MM/yyyy' }}
+    </p>
+    <p class="text-sm text-gray-600">Local: {{ person.ultimaOcorrencia.localDesaparecimentoConcat }}</p>
+    }
+
+    <button [routerLink]="['/persons', person.id, 'detail']"
+        class="mt-4 text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+        Ver mais detalhes
+    </button>
+</div>

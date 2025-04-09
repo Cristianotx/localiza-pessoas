@@ -1,10 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { HttpPersonService } from '../../shared/services/http-person/http-person.service';
 import { IStatistical } from '@/shared/interfaces/person.interface';
+import { SpinnerComponent } from '@/core/layout/components/loading/spinner/spinner.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [SpinnerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

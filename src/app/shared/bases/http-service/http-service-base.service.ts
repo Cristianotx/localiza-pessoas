@@ -22,13 +22,8 @@ export class HttpServiceBase<T> implements IHttpService<T> {
     this.httpClient = inject(HttpClient);
     this.setUrlBase(controller, version, urlBase);
   }
-
   public get(url?: string, params?: Object): Observable<T> {
     return this.httpClient.get<T>(this.getUrlWithParams(url, params), httpOptions);
-  }
-
-  public getById(url: string, id: string): Observable<T> {
-    throw new Error("Method not implemented.");
   }
   public post(url: string, body?: T): Observable<T> {
     throw new Error("Method not implemented.");

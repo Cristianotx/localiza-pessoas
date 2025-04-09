@@ -1,6 +1,6 @@
-import { IFilter } from '@/pages/persons/missing/missing.component';
+import { IFilter } from '@/pages/persons/components/filter/filter.component';
 import { HttpServiceBase } from '@/shared/bases/http-service/http-service-base.service';
-import { IResponse, IStatistical } from '@/shared/interfaces/person.interface';
+import { IPerson, IResponse, IStatistical } from '@/shared/interfaces/person.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -10,14 +10,19 @@ import { Observable } from 'rxjs';
 export class HttpPersonService extends HttpServiceBase<any> {
 
   constructor() {
-    super('pessoas/aberto')
+    super('pessoas')
   }
 
   public getStatistical(): Observable<IStatistical> {
-    return this.get('estatistico');
+    return this.get('aberto/estatistico');
   }
 
   public getMissings(filter: IFilter): Observable<IResponse> {
-    return this.get('filtro', filter);
+    return this.get('aberto/filtro', filter);
   }
+
+  public getById(id: string): Observable<IPerson> {
+    return this.get(id);
+  }
+
 }

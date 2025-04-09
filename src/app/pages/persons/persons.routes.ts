@@ -1,16 +1,12 @@
 import { Routes } from '@angular/router';
 
-export const PERSONS_ROUTES: Routes = [{
-    path: '',
-    redirectTo: 'missing',
-    pathMatch: 'full',
-},
-{
-    path: 'missing',
-    loadComponent: () => import('./missing/missing.component').then(c => c.MissingComponent),
-},
-{
-    path: 'localized',
-    loadComponent: () => import('./localized/localized.component').then(c => c.LocalizedComponent),
-}
+export const PERSONS_ROUTES: Routes = [
+    {
+        path: '',
+        loadComponent: () => import('./list/list.component').then(c => c.PersonsListComponent),
+    },
+    {
+        path: ':id/detail',
+        loadComponent: () => import('./detail/detail.component').then(c => c.PersonsDetailComponent),
+    },
 ];
